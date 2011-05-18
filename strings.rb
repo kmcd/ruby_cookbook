@@ -1,3 +1,5 @@
+name = 'foo'
+
 mail = <<END
 Dear #{name},
 Unfortunately we cannot process your insurance claim at this
@@ -44,15 +46,17 @@ class String
     lines, line, words = [], "", split(/\s+/)
     
     until words.empty?
-      line << words.pop + ' '
+      word = words.shift + ' '
       
-      if line.size + word.size <= width
-        lines << line
-        line = []
+      if line.size + word.size > width
+        lines << line + "\n"
+        line = ""
       end
+        
+      line << word
     end
     
-    lines.join '\n'
+    lines.to_s
   end
 end
 
