@@ -65,3 +65,8 @@ And he stoppeth one of three.
 "By thy long beard and glittering eye,
 Now wherefore stopp'st thou me?}
 
+# String#next, #succ behaves like an odometer
+'89999'.succ
+'nzzzz'.succ
+
+
